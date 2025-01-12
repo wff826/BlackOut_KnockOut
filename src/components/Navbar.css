@@ -1,0 +1,79 @@
+.navbar {
+  background-color: white;
+  height: 70px;
+  position: relative;  /* For absolute positioning of border */
+}
+
+.navbar::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;  /* Reduced from 3px to 1px for a thinner line */
+  background-color: #e0e0e0;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.navbar-logo {
+  flex: 1;  /* Take up equal space as navbar-right */
+  text-decoration: none;
+  padding-left: 16px;  /* Add padding to move logo right */
+}
+
+.navbar-logo span {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 32px;
+  position: absolute;  /* Position in the middle */
+  left: 50%;
+  transform: translateX(-50%);  /* Center the menu */
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  padding: 24px 16px 23px;
+  position: relative;
+}
+
+.nav-item.active {
+  color: #00D68F;
+}
+
+.nav-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: -4px;
+  right: -4px;
+  height: 2px;
+  background-color: #00D68F;
+  z-index: 1;
+}
+
+.navbar-right {
+  flex: 1;  /* Take up equal space as navbar-logo */
+}
+
+.logo-image {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  margin-left: 8px;  /* Additional margin if needed */
+} 
